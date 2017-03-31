@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<title>JIRA Ticket Generator</title>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-8" id="top-text">
+			<h1>JIRA Ticket Generator</h1>
+			<hr>
+			<h2>B2C and B2B Launch Doc - Postpaid</h2>
+			<p>Please fill out all form fields below and click the submit button to generate your Consumer and/or B2C JIRA ticket. For any questions or concerns, please reach out to <a href="mailto:dc215q@att.com">Dan Clem</a></p>
+				<div class="form-group">
+					<label for="channels">Sales Channels</label>
+					<select id="channels" class="form-control">
+						<option>All</option>
+						<option>Consumer</option>
+						<option>B2B</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="manufacturer">Manufacturer:</label>
+					<input type="text" id="manufacturer" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="modelName">Model Name (without storage capacity)</label>
+					<input type="text" id="modelName" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="codeName">Code Name</label>
+					<input type="text" id="codeName" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="launchStatus">Launch Status</label>
+					<select id="launchStatus" class="form-control">
+						<option>Buy Now</option>
+						<option>Pre-Order</option>
+						<option>Coming Soon</option>
+					</select>
+				</div>
+				<div class="form-group" id="preorderInput">
+					<label for="preorderDate">Pre-Order Date</label>
+					<input type="date" id="preorderDate" class="form-control"> 
+				</div>
+				<div class="form-group">
+					<label for="launchDate">Launch Date</label>
+					<input type="date" id="launchDate" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="skuNumber">Number of SKUs</label>
+					<input type="number" id="skuNumber" min="1" max="5" value="1" class="form-control">
+				</div>
+				<hr>
+				<h3 class="text-center">SKU Specific</h3>
+				<div class="row">
+					<div class="col-lg-2" id="sku1">
+						<p>SKU 1</p>
+						<div class="form-group">
+							<label for="modelName1">Model Name</label>
+							<input type="text" id="modelName1" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="deviceColor1">Device Color</label>
+							<input type="text" id="deviceColor1" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="billCode1">Bill Code</label>
+							<input type="text" id="billCode1" pattern="[a-zA-Z0-9_-]{5}" title="must be 5 characters" class="form-control">
+						</div>
+					</div>
+					<div class="col-lg-2" id="sku2">
+						<p>SKU 2</p>
+						<div class="form-group">
+							<label for="modelName2">Model Name</label>
+							<input type="text" id="modelName2" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="deviceColor2">Device Color</label>
+							<input type="text" id="deviceColor2" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="billCode2">Bill Code</label>
+							<input type="text" id="billCode2" pattern="[a-zA-Z0-9_-]{5}" title="must be 5 characters" class="form-control">
+						</div>
+					</div>
+					<div class="col-lg-2" id="sku3">
+						<p>SKU 3</p>
+						<div class="form-group">
+							<label for="modelName3">Model Name</label>
+							<input type="text" id="modelName3" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="deviceColor3">Device Color</label>
+							<input type="text" id="deviceColor3" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="billCode3">Bill Code</label>
+							<input type="text" id="billCode3" pattern="[a-zA-Z0-9_-]{5}" title="must be 5 characters" class="form-control">
+						</div>
+					</div>
+					<div class="col-lg-2" id="sku4">
+						<p>SKU 4</p>
+						<div class="form-group">
+							<label for="modelName4">Model Name</label>
+							<input type="text" id="modelName4" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="deviceColor4">Device Color</label>
+							<input type="text" id="deviceColor4" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="billCode4">Bill Code</label>
+							<input type="text" id="billCode4" pattern="[a-zA-Z0-9_-]{5}" title="must be 5 characters" class="form-control">
+						</div>
+					</div>
+					<div class="col-lg-2" id="sku5">
+						<p>SKU 5</p>
+						<div class="form-group">
+							<label for="modelName5">Model Name</label>
+							<input type="text" id="modelName5" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="deviceColor5">Device Color</label>
+							<input type="text" id="deviceColor5" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="billCode5">Bill Code</label>
+							<input type="text" id="billCode5" maxlength="5" pattern="[a-zA-Z0-9_-]{5}" title="must be 5 characters" class="form-control">
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div class="form-group">
+					<label for="launchDoc">Launch Doc Sharepoint Link</label>
+					<input type="text" id="launchDoc" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="offerManager">Offer Manager</label>
+					<input type="text" id="offerManager" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="launchManager">Launch Manager (ex. Erika Arent)</label>
+					<input type="text" id="launchManager" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="webLaunchManager">Your Name</label>
+					<input type="text" id="webLaunchManager" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="shortDescription">Short Description</label>
+					<textarea type="text" rows="5" id="shortDescription" class="form-control"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="keyFeatures">Key Features (List in order)</label>
+					<textarea type="text" rows="5" id="keyFeatures" class="form-control"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="seoKeywords">SEO Keywords</label>
+					<textarea type="text" rows="5" id="seoKeywords" class="form-control"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="seoTitle">SEO Title</label>
+					<input type="text" id="seoTitle" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="seoBreadcrumbs">SEO Breadcrumbs</label>
+					<input type="text" id="seoBreadcrumbs" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="conVanity">Consumer Vanity URLs (Use comma to seperate)</label>
+					<input type="text" id="conVanity" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="bizVanity">B2B Vanity URLs (Use comma to seperate)</label>
+					<input type="text" id="bizVanity" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="orderBullets">Order Confirmation Bullets</label>
+					<textarea type="text" rows="5" id="orderBullets" class="form-control"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="consumerUrl">Consumer PDP URL</label>
+					<input type="url" id="consumerUrl" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="prDate">PR date</label>
+					<input type="date" id="prDate" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="premierTspace">Premier Image Links</label>
+					<input type="url" id="premierTspace" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="bizCenterTspace">Business Center Image Links</label>
+					<input type="url" id="bizCenterTspace" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="consumerImageLinks">Consumer Image Links</label>
+					<input type="url" id="consumerImageLinks" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="notes">Ticket notes</label>
+					<textarea type="text" rows="5" id="notes" class="form-control"></textarea>
+				</div>
+
+				<button type="button" class="btn btn-success">Submit</button>
+		</div>
+		<div class="col-lg-4">
+			<h2 id="column-notice">Your ticket text will appear here:</h2>
+			<div id="firstHidden">
+				<p id="instructions">
+					<br>Congratulations! You're ticket has been successfully created! Please go to <a href="https://jira.cingular.net">JIRA</a> and click 'Create Issue' button on menu.
+				</p>
+				<p id="ticketTitle">
+					<br><h2>JIRA Ticket Title</h2>
+					<hr>
+					<br>Device Launch: <span class="subtaskTitle"></span>
+					<hr>
+					<br>
+					<h2>JIRA Ticket Descripton</h2>
+					<br>
+				</p>
+		<!-- Ticket summary -->
+				<div id="consumerLaunch">
+					<p id="summaryTicket">
+						<br>
+						<br>h2. Consumer Ticket: 
+						<br><span class="subtaskTitle"></span>
+						<br>* Launch date / time: <span class="launchDate"></span> @ 9PM PT
+						<br>* Billcodes: <span class="billCode"></span>
+						<br>* Colors: <span class="deviceColors"></span>
+						<br>* Vanity URLs: <span class="conVanity"></span>
+						<br>* Overview Tab ticket: TBD
+						<br>* Launchdoc link: <span class="launchDoc"></span>
+						<br>* Notes: <span class="notes"></span>
+						<br>
+						<br>----
+					</p>
+					<!-- Consumer SEO subtask -->
+					<p id="seoTicket">
+						<br>{color:blue} 
+						<br>*SUBTASK #1: Consumer | SEO: <span class="subtaskTitle"></span>*
+						<br>{color}
+						<br>* Title: <span class="seoTitle"></span>
+						<br>* Keywords: <span class="seoKeywords"></span>
+						<br>* SEO Description: <span class="shortDescription"></span>
+						<br>* Breadcrumbs: <span class="seoBreadcrumbs"></span>
+						<br>
+						<br>----
+					</p>
+					<!-- Consumer content subtask -->
+					<p id="contentTicket">
+						<br>{color:blue} 
+						<br>*SUBTASK #2: Consumer | CONTENT: <span class="subtaskTitle"></span>*{color}
+						<br>
+						<br>{color:purple}
+						<br>*Short Description:*  
+						<br>{color}
+						<br><span class="shortDescription"></span>
+						<br>
+						<br>{color:blue}
+						<br>*Key Features:*
+						<br>{color}
+						<span class="keyFeatures"></span>
+						<br>
+						<br>{color:blue}
+						<br>*Order Confirmation Bullets:*
+						<br>{color}
+						<span class="orderBullets"></span>
+						<br>
+						<br>----
+					</p>
+					<!-- Consumer image subtask -->
+					<p id="consumerHardRockTicket">
+						<br>{color:blue} *SUBTASK #3: Consumer | IMP - HR Images: <span class="subtaskTitle"></span>*{color}
+						<br>
+						<br>Device Images: <span class="consumerImageLinks"></span>
+						<br>
+						<br>*Hardrock*
+						<br><span class="conImageHardrock"></span>
+						<br>
+						<br>*Mobile*
+						<br><span class="conImageMobile"></span>
+						<br>
+						<br>----
+					</p>
+					<!-- Consumer image subtask -->
+					<p id="consumerMyAttTicket">
+						<br>{color:blue} *SUBTASK #4: Consumer | IMP - myAT&T Images: <span class="subtaskTitle"></span>*{color}
+						<br>
+						<br>Device Images: <span class="consumerImageLinks"></span>
+						<br>
+						<br>*myATT*
+						<br><span class="conImageMyAttSizes"></span>
+						<br>
+						<br>----
+					</p>
+					<p id="impTicket">
+						<br>{color:blue} 
+						<br>*SUBTASK #5: Consumer | Wireless IMP:  <span class="subtaskTitle"></span>*{color}
+						<br>
+						<br>||Launch doc| Please see tracker ticket|
+						<br>||Number of SKUs| <span class="skuNumber">|
+						<br>||Colors|<span class="deviceColors"></span>|
+						<br>||Promotions| TBD|
+						<br>||SEO Details|*Title:* <span class="seoTitle"></span>
+						<br> *Keywords:* <span class="seoKeywords"></span>
+						<br> *Description:* <span class="shortDescription"></span>
+						<br> *Breadcrumbs:* <span class="seoBreadcrumbs"></span>|
+						<br>||Overview Tab|TBD|
+						<br>||Other| TBD|
+						<br>
+						<br>----
+					</p>
+					<p id="catalogTicket">
+						<br>{color:blue} 
+						<br>*SUBTASK #6: Consumer | CATALOG:  <span class="subtaskTitle"></span>*{color}
+						<br>
+						<br>Please launch the <span class="deviceTitle"></span> as <span class="launchStatus"></span> on <span class="launchDate"></span> @ 9PM PT.
+						<br># Launch doc: Please see tracker ticket
+						<br># Number of SKUs: <span class="skuNumber">
+						<br># Colors: <span class="deviceColors"></span>
+						<br># Promotions: TBD
+						<br>
+						<br>----
+					</p>
+				</div>
+				<div id="bizLaunch">
+					<!-- Business Ticket Summary -->
+					<p id="bizSummary">
+						<br>h2. B2B Ticket: 
+						<br>
+						<br><span class="subtaskTitle"></span> 
+						<br>*Sites:* Business Center and Premier
+						<br>*Colors:* <span class="deviceColors"></span>
+						<br>*Assets:*
+						<br>* Launch doc: {color:red}DRAFT{color} attached
+						<br>* Launch date: <span class="launchDate"></span>
+						<br>* Monobrief: Attached
+						<br>* Business Center Vanity URL:<span class="bizVanity"></span>
+						<br>
+						<br>----
+					</p>
+					<!-- Business Content subtask -->
+					<p id="bizContentTicket">
+						<br>{color:blue}
+						<br>*SUBTASK #1: B2B | CONTENT: <span class="subtaskTitle"></span>*{color}
+						<br>
+						<br>For the <span class="deviceTitle"></span> please:
+						<br>* Write the overview, short description, medium description
+						<br>* While device copy is in edit, work with Kathryn Jacobs on the SEO (meta title, meta description, keywords)
+						<br>* Edit the Device Launch Request
+						<br>
+						<br>*Assets:*
+						<br>* Ann, you and Robin both have “contributor” access to the <span class="subtaskTitle"></span> folder for this device on tSpace: *tSpace Link here*
+						<br>* You have been given access to the monobrief.
+						<br>* I'll attach launch doc after the review meeting on TBD.
+						<br>* First mention: Device name <span class="deviceTitle"></span>, use the codename if device name is not available and we can do a find and replace later
+						<br>
+						<br>*Owners:*
+						<br>Offer Manager: <span class="offerManager"></span>
+						<br>Launch Manager: <span class="launchManager"></span>
+						<br>
+						<br>*Timeline with Due Dates:*
+						<br>Content REQ: 
+						<br>Content Review: 
+						<br>Offer Manager edits: 
+						<br>Finalized by: 
+						<br>
+						<br>*Device dates:*
+						<div id="datesPreorder">
+							Pre-order <span class="preorderDate"></span>
+						</div>
+						<br>Buy Now <span class="launchDate"></span>
+						<br>{quote}
+						<br>
+						<br>----
+					</p>
+					<!-- Business Image subtask -->
+					<p id="bizDesignTicket">
+						<br>*{color:blue}
+						<br>SUBTASK #2: B2B | DESIGN: <span class="subtaskTitle"></span>*{color}
+						<br>
+						<br>To B2B Design
+						<br>SLA 5 days
+						<br>{color:red}Depends on high-res image source files{color}
+						<br>{color:red}Need for B2B Imp page construction{color}
+						<br>
+						<br>Please create B2B device images for the <span class="deviceTitle"></span>. Use the image names below, but add your ticket number to the name. Zip into two files, one for Business Center (PBC), one for Premier (POS)and include the 245x424 front view for Premier.
+						<br>
+						<br><span class="skuNumber"></span>
+						<br>
+						<br>*Assets:*
+						<br>Business Center: <span class="bizCenterTspace"></span>
+						<br>Premier: <span class="premierTspace"></span>
+						<br>
+						<br>*ZIP #1 - Business Center*
+						<br>Tspace Link: <span class="bizCenterTspace"></span>
+						<br><span class="bizBizCenterNames"></span>
+						<br>
+						<br>*ZIP #2: Premier*
+						<br>Tspace Link: <span class="premierTspace"></span>
+						<br><span class="bizPremierNames"></span>
+						<br>
+						<br>----
+					</p>
+					<!-- BREFs and Email IDs subtask -->
+					<p id="brefs">
+						<br>*{color:blue}
+						<br>SUBTASK #3: B2B-Business Center | BREFs: <span class="subtaskTitle"></span>{color}*
+						<br>
+						<br>To Allana Banks
+						<br>SLA about 3 days
+						<br>{color:red}Need for B2B Imp page construction{color}
+						<br>
+						<br>Create BREFs for <span class="deviceTitle"></span>. The device is launching <span class="launchDate"></span> @ 9PM PT
+						<br>
+						<br>May I get Email & IPR BREFs for the <span class="deviceTitle"></span>?
+						<br>
+						<br>URL:
+						<br><span class="bizUrl"></span>
+						<br>
+						<br>----
+					</p>
+					<!-- Business Twitter link creation subtask -->
+					<p id="bizTwitterTicket">
+						<br>*{color:blue}
+						<br>SUBTASK #4: B2B-Business Center | Twitter: <span class="subtaskTitle"></span>{color}*
+						<br>
+						<br>To Chris Porter
+						<br>SLA about 5 days
+						<br>{color:red}Need for B2B Imp page construction{color}
+						<br>
+						<br>Twitter link for <span class="deviceTitle"></span>*
+						<br>
+						<br>
+						<br>The new device <span class="deviceTitle"></span> is launching as “CTA” <span class="launchDate"></span> @ 9PM PT.
+						<br>
+						<br>May I get Twitter copy from you?
+						<br>
+						<br>The Business Center URL will be: <span class="bizUrl"></span>
+						<br>
+						<br>Kathryn Jacobs in SEO will provide meta title and meta description, which will be pulled in by LinkedIn and Facebook, and we’ll copy/paste it into email subject and body, too.
+						<br>
+						<br>I’ll have Design make an image for use with Facebook and LinkedIn popup (ordered at the same time I request device page images).
+						<br>
+						<br>Here is the overview copy, to help you with Twitter copy creation. Copy has been through Offer Manager review but is still with Legal for approval.
+						<br>
+						<br>    Overview:
+						<br>    {color:red}Still to come{color}
+						<br>
+						<br>    Short description:
+						<br>    {color:red}Still to come{color}
+						<br>
+						<br>    Medium description:
+						<br>    {color:red}Still to come{color}
+						<br>
+						<br>----
+					</p>
+					<!-- Premier & Business Center IMP subtasks -->
+					<p id="bizCatalogTicket">
+						<br>*{color:blue}
+						<br>SUBTASK #5: B2B-Premier | Catalog: <span class="subtaskTitle">{color}*
+						<br>
+						<br>To Premier Catalog
+						<br>SLA Send right away for the first task, remainder will happen closer to launch.
+						<br>{color:red}Need skuID for B2B Imp page construction{color}
+						<br>
+						<br>
+						<br>    Please create a new device page for <span class="deviceTitle"></span>
+						<br>    Launch date / time: <span class="launchDate"></span> @ 9 PM PT
+						<br>    CTA: Buynow
+						<br>    Colors: <span class="deviceColors"></span>
+						<br>    ED model:
+						<br>
+						<br>    REQUEST #1 (early):
+						<br>    Please set up the shells for this device, and provide prodID, Premier skuID and IMEI type for each color.
+						<br>
+						<br>    REQUEST #2 (later):
+						<br>    Later, when content is finalized, we’ll send latest Device Launch Request and ask you to build out the device.
+						<span id="premierNotes">
+							<br>*NOTES FOR PRE-ORDER:*
+							<br>
+							<br>Pre-order CTA button
+							No tutorial link text and URL (we'll add later via separate ticket for the "Buy now" phase).
+							<br>Legal says we no longer need to include a pre-order paragraph we've included on the overview tab.
+							<br>No BOPIS
+							<br>Shipping is for free Express (instead of free standard)
+						</span>
+						<br>
+						<br>----
+					</p>
+					<p class="bizPublishingTicket">
+						<br>*{color:blue}
+						<br>SUBTASK #6: B2B-Business Center | IMP: <span class="subtaskTitle">{color}*
+						<br>
+						<br>To B2B Imp
+						<br>SLA At least 5 days prior to GA
+						<br>{color:red}Depends on: Content, Design, BREFs, Twitter, and Premier Catalog tickets.{color}
+						<br>
+						<br>*REQUEST:*
+						<br>Please create a “<span class="launchStatus"></span>" device landing page for the <span class="deviceTitle"></span> device launching <span class="launchDate"></span> 9pm PT.
+						<br>
+						<br>*URL: *
+						<br><span class="bizUrl"></span>
+						<br>
+						<br>*LAUNCH DOC:*
+						<br>Device Launch Request is attached. Only pay attention to the “B2B Info” tab at the very end. The launch doc includes:
+						<br>* Overview content
+						<br>* “Shop now” link text and URL
+						<span id="publishingTutorial">
+							<br>* Tutorial link text and URL
+						</span>
+						<br>* Premier skuID
+						<br>* Business Center BREFs
+						<br>* Keywords, meta title, meta description, email subject and body
+						<br>* Twitter copy and meteor code
+						<br>
+						<br>*IMAGES:*
+						<br>* 200x200 sharing image 
+						<br>* Landing page images
+						<span id="publishingVideo">
+							<br>*{color:red}IF a video will be going out at the same time as launch{color}*
+							<br>*VIDEO:*
+							We would also like to add AT&T device videos for the {color:red}Device Name{color} to the device details page. For this particular devices the video has been split into {color:red}quantity{color} chapters.We'll use video icons and chapter titles, and the video links will open the Global Video Player.
+							<br>
+							<br>*Location:*
+							Overview tab, below the overview and above the Shop and Tutorial links.
+							<br>
+							<br>*Request:*
+							Please add the following videos, each on a line by itself, underneath a bold header, "Device videos:"
+							<br>
+							<br>*Device videos:*
+							(video icon) {color:red}Chapter 1 title{color}
+							Link to video ID: {color:red}B2C Chapter 1 video ID, e.g., 5000604{color}
+							ALT=Play video:{color:red}Chapter 1 title{color}
+							<br>
+							<br>(video icon) {color:red}Chapter 2 title{color}
+							Link to video ID: {color:red}B2C Chapter 2 video ID, e.g., 5000605{color}
+							ALT=Play video:{color:red}Chapter 2 title{color}
+							<br>
+							<br>(video icon) {color:red}Chapter 3 title{color}
+							Link to video ID: {color:red}B2C Chapter 3 video ID, e.g., 5000606{color}
+							ALT=Play video:{color:red}Chapter 3 title{color}
+							<br>
+							<br>*Approvals:*
+							Per email from Annie Cassidy (attached), these videos have been approved by Brand and Legal.
+							<br>
+							*Live data, etc.:*
+							<br>There does not appear to be live data on these videos.
+						</span>
+						<br>
+						<br>----
+					</p>
+					<!-- Upload Images to SVN subtask -->
+					<p id="bizUploadTicket">
+						<br>*{color:blue}
+						<br>SUBTASK #7: B2B-Premier | Premier Images: <span class="subtaskTitle"></span>{color}*
+						<br>
+						<br>To Vijayamrith Srinivasan
+						<br>SLA 2 days
+						<br>Requires SVN upload; make sure there are no freezes. 
+						<br>{color:red}Must NOT go live prior to PR.{color}
+						<br>{color:red}Depends on images from Design{color} 
+						<br>Also, add ticket info to Vijay's tracker found here: https://spfd03.web.att.com/sites/ISD/Premier%20Content%20Pushes/Forms/AllItems.aspx
+						<br>
+						<br>*Request:* Please publish the attached images to the business/images/equip/devices folder on <span class="launchDate"></span>
+						<br>
+						<br>1 Device x 1 color x 4 image sizes = 4 images total
+						<br>
+						<br>{color:red}Okay to go live <span class="prDate"></span>. Must not go earlier.{color}
+						<br>
+						<br>----
+					</p>
+					<!-- Bazaar Voice linking subtask -->
+					<p id="bizBazaarTicket">
+						<br>*{color:blue}SUBTASK #8: B2B-Premier | Bazaar Voice Syndication: <span class="subtaskTitle"></span>*
+						<br>
+						<br>To Jessica Thomson
+						<br>We send to Jessica the week prior to launch.
+						<br>Syndication begins with "<span class="launchStatus"></span>" not "Pre-order"
+						<br>{color:red}Depends on device and color names, premier sku, consumer sku{color}
+						<br>
+						<br>PREMIER PRODUCT - B2B NEW DEVICE LAUNCH - <span class="deviceTitle"></span> - Bazaar Voice Syndication*
+						<br>{color:red}More to come{color}
+						<br>
+						<br>    Here is the information you need for Bazaar Voice notification related to syndication:
+						<br>
+						<br>    Buy now date: <span class="launchDate"></span>
+						<br>    Display name: <span class="manufacturer"></span> <span class="modelName"></span>
+						<br>    Color: <span class="deviceColors"></span>
+						<br>    Premier skuID: TBD
+						<br>    Consumer skuID: TBD
+						<br>
+						<br>----
+					</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script
+	src="https://code.jquery.com/jquery-3.1.1.js"
+	integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+	crossorigin="anonymous"></script>
+	<script>
+
+		$(document).ready(function() {
+
+			//Toggles SkuNumber boxes
+			$("input#skuNumber").change(function() {
+				var divs = ["div#sku1", "div#sku2", "div#sku3", "div#sku4", "div#sku5"];
+				var skuNumber = parseInt($("input#skuNumber").val());
+				if (skuNumber === 1) {
+					$(divs[1]).hide();
+					$(divs[2]).hide();
+					$(divs[3]).hide();
+					$(divs[4]).hide();
+				}
+				else if (skuNumber === 2) {
+					$(divs[1]).show();
+					$(divs[2]).hide();
+					$(divs[3]).hide();
+					$(divs[4]).hide();
+				} else if (skuNumber === 3) {
+					$(divs[1]).show();
+					$(divs[2]).show();
+					$(divs[3]).hide();
+					$(divs[4]).hide();
+				} else if (skuNumber === 4) {
+					$(divs[1]).show();
+					$(divs[2]).show();
+					$(divs[3]).show();
+					$(divs[4]).hide();
+				} else if (skuNumber === 5) {
+					$(divs[1]).show();
+					$(divs[2]).show();
+					$(divs[3]).show();
+					$(divs[4]).show();
+				}
+			});
+
+			//Toggles preorder date input box
+			$("select#launchStatus").change(function() {
+				var launchStatus = $("select#launchStatus").val()
+				if (launchStatus === "Pre-Order") {
+					$("div#preorderInput").show();
+
+				}
+				else {
+					$("div#preorderInput").hide();
+				}
+			});
+
+
+			// Function that runs when user clicks submit button. Note: All text to generate needs to be below this line
+			$("button").click(function(e) {
+
+				// Declares static variables for input fields and extracts their values
+				var channels = $("select#channels").val();
+				var manufacturer = $("input#manufacturer").val();
+				var codeName = $("input#codeName").val();
+				var modelName = $("input#modelName").val();
+				var launchStatus = $("select#launchStatus").val();
+				var preorderDate = $("input#preorderDate").val();
+
+
+				var launchDoc = $("input#launchDoc").val();
+				var offerManager = $("input#offerManager").val();
+				var launchManager = $("input#launchManager").val();
+				var webLaunchManager = $("input#webLaunchManager").val();
+				var shortDescription = $("textarea#shortDescription").val();
+				var seoTitle = $("input#seoTitle").val();
+				var seoKeywords = $("textarea#seoKeywords").val();
+				var seoBreadcrumbs = $("input#seoBreadcrumbs").val();
+				var keyFeatures = $("textarea#keyFeatures").val();
+				var conVanity = $("input#conVanity").val();
+				var bizVanity = $("input#bizVanity").val();
+				var orderBullets = $("textarea#orderBullets").val();
+				var consumerUrl = $("input#consumerUrl").val();
+				var prDate = $("input#prDate").val();
+				var premierTspace = $("input#premierTspace").val();
+				var bizCenterTspace = $("input#bizCenterTspace").val();
+				var consumerImageLinks = $("input#consumerImageLinks").val();
+				var notes = $("textarea#notes").val();
+
+
+			    var channels = $("select#channels").val();
+				var manufacturer = $("input#manufacturer").val();
+				var codeName = $("input#codeName").val();
+				var modelName = $("input#modelName").val();
+				var launchStatus = $("select#launchStatus").val();
+				var preorderDate = $("input#preorderDate").val();
+				var launchDate = $("input#launchDate").val();
+			    var skuNumber = $("input#skuNumber").val();
+
+				var billCode1 = $("input#billCode1").val();
+				var billCode2 = $("input#billCode2").val();
+				var billCode3 = $("input#billCode3").val();
+				var billCode4 = $("input#billCode4").val();
+				var billCode5 = $("input#billCode5").val();
+				var modelName1 = $("input#modelName1").val();
+				var modelName2 = $("input#modelName2").val();
+				var modelName3 = $("input#modelName3").val();
+				var modelName4 = $("input#modelName4").val();
+				var modelName5 = $("input#modelName5").val();
+				var deviceColor1 = $("input#deviceColor1").val();
+				var deviceColor2 = $("input#deviceColor2").val();
+				var deviceColor3 = $("input#deviceColor3").val();
+				var deviceColor4 = $("input#deviceColor4").val();
+				var deviceColor5 = $("input#deviceColor5").val();
+			    var skuNumberLibrary = ["", "1", "2", "3", "4", "5"];
+
+			    //Array for holding modelName and deviceColor for making images. 
+				var skuInfos = [
+					[deviceColor1, modelName1, billCode1], [deviceColor2, modelName2, billCode2], [deviceColor3, modelName3, billCode3], [deviceColor4, modelName4, billCode4], [deviceColor5, modelName5, billCode5]
+					];
+
+				//Array for holding colors and listing with comma
+			    var colorArray = [];
+			    var billCodeArray = [];
+
+				skuInfos.forEach(function(skuInfo) {
+					if (skuInfo[0].length > 0) {
+						colorArray.push(skuInfo[0]);
+						billCodeArray.push(skuInfo[2]);
+					};
+				});
+				var mergedColor = colorArray.join(", ");
+				var mergedBillCodes = billCodeArray.join(", ");
+				$("span.deviceColors").text(mergedColor);
+				$("span.billCode").text(mergedBillCodes);
+
+
+				// Consumer image sizes
+				var conMyAttSizes = ["-55x60.jpg", "-100x110.jpg"];
+				var conHardrockSizes = ["-60x87.png", "-100x160.png", "-160x160.png", "-450x350.png", "-60x87.jpg", "-100x160.jpg", "-160x160.jpg", "-450x350.jpg", "-964x750.jpg", "-100x100.png", "-100x100.jpg"];
+				var conMobileSizes = ["-240x320.png"];
+
+				// Biz image sizes
+				var bizBizCenterSizes = ["_front_245x424.png", "_angle_right_245x424.png", "_side_right_245x424.png", "_back_245x424.png", "_side_left_245x424.png", "_angle_left_245x424.png", "_fblipopup_200x200.jpg"];
+				var bizPremierSizes = ["_front_54x55.jpg", "_front_78x133.jpg", "_front_245x424.png (copy of the BIZ image)", "_front_110x216.png"];
+
+		  		var lowerModelName = skuInfos[0][1].toLowerCase();
+	          	var lowerDeviceColor = skuInfos[0][0].toLowerCase();
+	          	var lowerManufacturer = manufacturer.toLowerCase();
+				var spaceManufacturer = lowerManufacturer.replace(/\s+/g, "");
+				var spaceModelName = lowerModelName.replace(/\s+/g, "");
+				var spaceDeviceColor = lowerDeviceColor.replace(/\s+/g, "");
+	          	var bizImageNames = spaceManufacturer + "_" + spaceModelName + "_" + spaceDeviceColor;
+		  		bizBizCenterSizes.forEach(function(size) {
+		  			$("span.bizBizCenterNames").append("<br>ticket#_" + bizImageNames + size);
+		  		});
+
+		  		//Subtask title
+				var subtaskTitle = manufacturer + " " + modelName + " (" + codeName + ") " + launchStatus + " " + launchDate	+ " @ 9PM - " + skuNumber + " SKUs";
+				//Ticket summary
+				var deviceTitle = manufacturer + " " + modelName;
+
+				var bizImageFacebook = spaceManufacturer + spaceModelName;
+				var lowerModelName = modelName.toLowerCase();
+
+				//Business Center URL
+				var bizUrl = "http://www.wireless.att.com/businesscenter/devices/" + lowerManufacturer + "-" + lowerModelName.replace(/\s+/g, "-") + ".jsp";
+
+				skuInfos.forEach(function(info) {
+			  		var lowerModelName = info[1].toLowerCase();
+		          	var lowerDeviceColor = info[0].toLowerCase();
+		          	var lowerManufacturer = manufacturer.toLowerCase();
+  					var spaceManufacturer = lowerManufacturer.replace(/\s+/g, "");
+					var spaceModelName = lowerModelName.replace(/\s+/g, "");
+					var spaceDeviceColor = lowerDeviceColor.replace(/\s+/g, "");
+		          	var conImageNames = lowerManufacturer + "-" + lowerModelName + "-" + lowerDeviceColor;
+		          	var bizImageNames = spaceManufacturer + "_" + spaceModelName + "_" + spaceDeviceColor;
+				  	if (info[0].length !== 0) {
+				  		conMyAttSizes.forEach(function(size) {
+	      					$("span.conImageMyAttSizes").append("<br>" + conImageNames + size);
+				    	});
+				  		conHardrockSizes.forEach(function(size) {
+	      					$("span.conImageHardrock").append("<br>" + conImageNames + size);
+				    	});
+				  		conMobileSizes.forEach(function(size) {
+	      					$("span.conImageMobile").append("<br>" + conImageNames + size);
+				    	});
+						bizPremierSizes.forEach(function(size) {
+							$("span.bizPremierNames").append("<br>ticket#_" + bizImageNames + size);
+						});
+			    	};
+				});
+
+				if (launchStatus === "Buy Now") {
+					$("span#publishingTutorial").show();
+					$("span#publishingVideo").show();
+					$("p#bizBazaarTicket").show();
+				}
+				else {
+					$("span#premierNotes").show();
+					$("span.preorderDate").show();
+					$("#datesPreorder").show();
+				};
+
+				var i = 1;
+		  		for (;skuInfos[i];) {
+		  			if (skuInfos[i][0].length !== 0) {
+				  		var lowerModelName = skuInfos[i][1].toLowerCase();
+			          	var lowerDeviceColor = skuInfos[i][0].toLowerCase();
+			          	var lowerManufacturer = manufacturer.toLowerCase();
+						var spaceManufacturer = lowerManufacturer.replace(/\s+/g, "");
+						var spaceModelName = lowerModelName.replace(/\s+/g, "");
+						var spaceDeviceColor = lowerDeviceColor.replace(/\s+/g, "");
+			          	var bizImageNames = spaceManufacturer + "_" + spaceModelName + "_" + spaceDeviceColor;
+			          	$("span.bizBizCenterNames").append("<br>ticket#_" + bizImageNames + "_front_245x424.png");
+	          		};
+	          	i++;
+		  		};
+
+		  		if (channels === "Consumer") {
+		  			$("div#bizLaunch").hide()
+		  			$("div#consumerLaunch").show();
+		  		}
+		  		else if (channels === "B2B") {
+		  			$("div#consumerLaunch").hide();
+		  			$("div#bizLaunch").show();
+		  		}
+		  		else {
+		  			$("div#consumerLaunch").show();
+		  			$("div#bizLaunch").show();
+		  		};
+
+				// Replaces spans with inputs from regular variables
+				//var inputs = ["manufacturer", "modelName", "codeName", "launchStatus", "launchDoc", "offerManager", "launchManager", "webLaunchManager", "launchDate", "preorderDate", "shortDescription", "seoTitle", "seoKeywords", "seoBreadcrumbs", "keyFeatures", "conVanity", "bizVanity", "orderBullets", "consumerUrl", "prDate", "premierTspace", "bizCenterTspace", "consumerImageLinks", "notes", "skuNumber", "subtaskTitle"];
+
+				$("span.manufacturer").text(manufacturer);
+				$("span.modelName").text(modelName);
+				$("span.codeName").text(codeName);
+				$("span.launchStatus").text(launchStatus);
+				$("span.launchDoc").text(launchDoc);
+				$("span.offerManager").text(offerManager);
+				$("span.launchManager").text(launchManager);
+				$("span.webLaunchManager").text(webLaunchManager);
+				$("span.launchDate").text(launchDate);
+				$("span.preorderDate").text(preorderDate);
+				$("span.shortDescription").text(shortDescription);
+				$("span.seoTitle").text(seoTitle);
+				$("span.seoKeywords").text(seoKeywords);
+				$("span.seoBreadcrumbs").text(seoBreadcrumbs);
+				$("span.keyFeatures").text(keyFeatures);
+				$("span.conVanity").text(conVanity);
+				$("span.bizVanity").text(bizVanity);
+				$("span.orderBullets").text(orderBullets);
+				$("span.consumerUrl").text(consumerUrl);
+				$("span.prDate").text(prDate);
+				$("span.premierTspace").text(premierTspace);
+				$("span.bizCenterTspace").text(bizCenterTspace);
+				$("span.consumerImageLinks").text(consumerImageLinks);
+				$("span.notes").text(notes);
+			    $("span.skuNumber").text(skuNumber + " SKUs");
+			    $("span.subtaskTitle").text(subtaskTitle);
+
+				// Replaces spans for dynamic and special variables
+				$("span.deviceTitle").text(deviceTitle);
+				$("span.bizUrl").text(bizUrl);
+				$("span.bizImageFacebook").text(bizImageFacebook);
+
+				$("#column-notice").hide();
+				$("#firstHidden").show();
+				// Prevents form from deleting all contents in input and #firstHidden div
+
+			})
+		})
+	</script>
+</body>
+</html>

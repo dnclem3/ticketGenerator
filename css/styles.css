@@ -1,0 +1,43 @@
+body {
+	overflow: auto;
+}
+
+#firstHidden {
+	display: none;
+	overflow: auto;
+	height: 800px;
+}
+
+#top-text {
+	overflow: auto;
+	height: 800px;
+}
+
+#column-notice {
+	position: fixed;
+	color: red;
+}
+
+#sku2, #sku3, #sku4, #sku5 {
+	display:none;
+} 
+
+span#publishingTutorial, span#publishingVideo {
+	display:none;
+}
+
+p#bizBazaarTicket {
+	display:none;
+}
+
+span#premierNotes {
+	display:none;
+}
+
+div#datesPreorder {
+	display:none;
+}
+
+div#preorderInput {
+	display:none;
+}
